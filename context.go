@@ -1,4 +1,4 @@
-package beego
+package mvc
 
 import (
 	"fmt"
@@ -11,7 +11,8 @@ import (
 type Context struct {
 	ResponseWriter http.ResponseWriter
 	Request        *http.Request
-	Params         map[string]string
+	UserData         map[string]interface
+	input  interface{}
 }
 
 func (ctx *Context) WriteString(content string) {
